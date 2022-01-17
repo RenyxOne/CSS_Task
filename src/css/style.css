@@ -9,6 +9,12 @@ html {
   flex-direction: column;
   margin: 0 auto;
 }
+@supports (display: grid) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 
 .header {
   width: 100%;
@@ -25,6 +31,11 @@ html {
 }
 .authors__about {
   flex: 1 1 50%;
+}
+@media (max-width: 500px) {
+  .authors__about {
+    min-width: 100%;
+  }
 }
 .authors__text {
   text-align: justify;
@@ -43,6 +54,11 @@ html {
 }
 .eric .authors__text {
   margin-right: 10%;
+}
+@media (max-width: 500px) {
+  .eric .authors__text {
+    margin-right: 0;
+  }
 }
 
 .index-page {
