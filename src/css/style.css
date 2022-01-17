@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .wrapper {
@@ -11,11 +11,9 @@ html {
 }
 
 .header {
-  display: flex;
   width: 100%;
 }
 .header__title {
-  justify-self: flex-start;
   font-size: 14px;
   font-style: italic;
 }
@@ -28,17 +26,9 @@ html {
 .authors__about {
   flex: 1 1 50%;
 }
-@media (max-width: 500px) {
-  .authors__about {
-    min-width: 100%;
-  }
-}
 .authors__text {
   text-align: justify;
   hyphens: auto;
-}
-.authors__text span {
-  font-weight: bold;
 }
 .authors img {
   width: 100%;
@@ -54,10 +44,67 @@ html {
 .eric .authors__text {
   margin-right: 10%;
 }
-@media (max-width: 500px) {
-  .eric .authors__text {
-    margin-right: 0;
-  }
+
+.index-page {
+  width: 100%;
+}
+.index-page h2 {
+  font-size: 28px;
+}
+.index-page__title {
+  text-align: center;
+}
+.index-page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.index-page__text {
+  max-width: 700px;
+}
+.index-page__text h3 {
+  font-size: 24px;
+}
+
+.table {
+  width: 100%;
+}
+.table__col:last-child {
+  text-align: end;
+  vertical-align: bottom;
+}
+
+.table-of-content {
+  max-width: 600px;
+}
+
+.summary__table {
+  border-spacing: 20px 15px;
+}
+
+.real__table {
+  border-spacing: 20px 5px;
+}
+
+.page-num p {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer .copyright p {
+  color: #d0d0d0;
 }
 
 /*# sourceMappingURL=style.css.map */
