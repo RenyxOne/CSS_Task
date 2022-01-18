@@ -3,133 +3,8 @@ html {
   font-family: "Roboto", Arial, sans-serif;
 }
 
-.wrapper {
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-@supports (display: grid) {
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
-.header {
-  width: 100%;
-}
-.header__title {
-  font-size: 14px;
-  font-style: italic;
-}
-
-.authors__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-@supports (display: grid) {
-  .authors__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10%;
-  }
-  @media (max-width: 500px) {
-    .authors__container {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-.authors__about {
-  flex: 1 1 50%;
-}
-@media (max-width: 500px) {
-  .authors__about {
-    min-width: 100%;
-  }
-}
-@supports (display: grid) {
-  .authors__about {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-.authors__text {
-  text-align: justify;
-  hyphens: auto;
-}
-.authors img {
-  width: 100%;
-}
-
-.elizabeth {
-  flex: 0 1 40%;
-}
-
-.eric {
-  flex: 0 1 50%;
-}
-.eric .authors__text {
-  margin-right: 10%;
-}
-@media (max-width: 500px) {
-  .eric .authors__text {
-    margin-right: 0;
-  }
-}
-
-.index-page {
-  width: 100%;
-}
-.index-page h2 {
-  font-size: 28px;
-}
-.index-page__title {
-  text-align: center;
-}
-.index-page__content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-@supports (display: grid) {
-  .index-page__content {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: end;
-  }
-}
-.index-page__text {
-  max-width: 700px;
-}
-.index-page__text h3 {
-  font-size: 24px;
-}
-
-.table {
-  width: 100%;
-}
-.table__col:last-child {
-  text-align: end;
-  vertical-align: bottom;
-}
-
-.table-of-content {
-  max-width: 600px;
-}
-
-.summary__table {
-  border-spacing: 20px 15px;
-}
-
-.real__table {
-  border-spacing: 20px 5px;
-}
-
-.page-num p {
-  font-weight: bold;
-  font-size: 20px;
+* {
+  box-sizing: border-box;
 }
 
 .bold-text {
@@ -140,19 +15,146 @@ html {
   font-style: italic;
 }
 
-.footer {
-  display: flex;
-  justify-content: flex-end;
+h2 {
+  font-size: 28px;
 }
-@supports (display: grid) {
-  .footer {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: end;
+
+h3 {
+  font-size: 24px;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+}
+.header__title {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.authors {
+  width: 100%;
+}
+.authors__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+@media (max-width: 500px) {
+  .authors__container {
+    flex-direction: column;
   }
 }
-.footer .copyright p {
+.authors__card {
+  flex: 0 1 40%;
+}
+.authors__card_eric {
+  flex-basis: 50%;
+}
+@media (max-width: 500px) {
+  .authors__card {
+    flex: 0 1 100%;
+  }
+}
+
+.card__img {
+  width: 100%;
+}
+.card__img:hover {
+  transform: scale(1.5);
+  z-index: 99999;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.8);
+  transition: all 1s ease;
+}
+.card__text {
+  text-align: justify;
+  hyphens: auto;
+}
+.card__text_padding-right {
+  padding-right: 10%;
+}
+@media (max-width: 500px) {
+  .card__text_padding-right {
+    padding-right: 0;
+  }
+}
+
+.index-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-page__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.index-page__text {
+  max-width: 700px;
+  text-align: justify;
+  hyphens: auto;
+}
+.index-page__table-of-content {
+  max-width: 600px;
+}
+
+.table-of-content__col {
+  margin-bottom: 20px;
+}
+.table-of-content__col:last-child {
+  text-align: end;
+  vertical-align: bottom;
+}
+.table-of-content_spacing_summary {
+  border-spacing: 20px 15px;
+}
+.table-of-content_spacing_real {
+  border-spacing: 20px 5px;
+}
+
+.page-num {
+  text-align: end;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.footer {
+  width: 100%;
+}
+
+.copyright {
   color: #d0d0d0;
+  text-align: end;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.another-content {
+  display: flex;
+  justify-content: center;
+}
+
+.fake-load {
+  width: 64px;
+  height: 64px;
+  background: url("../img/load.png") no-repeat;
+  background-size: 100%;
+  animation: spin 3s infinite linear;
 }
 
 /*# sourceMappingURL=style.css.map */
