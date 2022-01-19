@@ -23,10 +23,21 @@ h3 {
   font-size: 24px;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+@supports (display: grid) {
+  body {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   max-width: 1100px;
 }
 @supports (display: grid) {
@@ -91,17 +102,17 @@ h3 {
   transform: scale(1.5);
   transition: all 1s ease;
 }
-.card__text {
-  hyphens: auto;
-  text-align: justify;
-}
-.card__text_padding-right {
+.card__text-area.card__text-area_padding-right {
   padding-right: 10%;
 }
 @media (max-width: 500px) {
-  .card__text_padding-right {
+  .card__text-area.card__text-area_padding-right {
     padding-right: 0;
   }
+}
+.card__text {
+  hyphens: auto;
+  text-align: justify;
 }
 
 .index-page {
@@ -146,10 +157,10 @@ h3 {
   vertical-align: bottom;
   text-align: end;
 }
-.table-of-content_spacing_summary {
+.table-of-content.table-of-content_spacing-summary {
   border-spacing: 20px 15px;
 }
-.table-of-content_spacing_real {
+.table-of-content.table-of-content_spacing-real {
   border-spacing: 20px 5px;
 }
 
